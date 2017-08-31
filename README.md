@@ -17,3 +17,9 @@
 * step_04
 
 > Activity 에서 데이터 변화에 대한 대응 구현
+
+## migrate 
+* RxJava1 -> Rxjava2
+* RxAndroid1 -> RxAndroid2
+
+## convert java -> kotlin
