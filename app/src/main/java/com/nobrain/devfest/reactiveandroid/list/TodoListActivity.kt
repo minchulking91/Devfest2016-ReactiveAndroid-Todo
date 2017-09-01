@@ -37,7 +37,7 @@ class TodoListActivity : AppCompatActivity() {
 
 
 
-        DataObserver.instance.register(this, Todo::class.java, object : Notify<Todo> {
+        DataObserver.instance.register(this, Todo::class, object : Notify<Todo> {
             override fun update(observable: Observable<Result<Todo>>): Disposable {
                 return observable.filter { it.added() }
                         .map { it.data }
@@ -48,7 +48,7 @@ class TodoListActivity : AppCompatActivity() {
                         }
             }
         })
-        DataObserver.instance.register(this, Todo::class.java, object : Notify<Todo> {
+        DataObserver.instance.register(this, Todo::class, object : Notify<Todo> {
             override fun update(observable: Observable<Result<Todo>>): Disposable {
                 return observable.filter { it.updated() }
                         .map { it.data }
@@ -64,7 +64,7 @@ class TodoListActivity : AppCompatActivity() {
                         }
             }
         })
-        DataObserver.instance.register(this, Todo::class.java, object : Notify<Todo> {
+        DataObserver.instance.register(this, Todo::class, object : Notify<Todo> {
             override fun update(observable: Observable<Result<Todo>>): Disposable {
                 return observable.filter { it.deleted() }
                         .map { it.data }
